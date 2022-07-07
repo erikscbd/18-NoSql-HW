@@ -1,0 +1,27 @@
+{
+  "name": "18-nosql-hw",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index",
+    "dev": "nodemon index",
+    "seed": "node utils/seed",
+    "heroku-postbuild": "node utils/seed.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/erikscbd/18-NoSql-HW.git"
+  },
+  "author": "erik escobedo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/erikscbd/18-NoSql-HW/issues"
+  },
+  "homepage": "https://github.com/erikscbd/18-NoSql-HW#readme",
+  "dependencies": {
+    "express": "^4.18.1",
+    "mongoose": "^6.4.3",
+    "nodemon": "^2.0.19"
+  }
+}
