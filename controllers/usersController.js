@@ -36,7 +36,7 @@ module.exports = {
       .then((users) => res.json(users))
       .catch((err) => res.status(500).json(err));
   },
-  // Delete a users and remove them from the course
+  // Delete a users by id
   deleteusers(req, res) {
     Users.findOneAndRemove({ _id: req.params.usersId }).then((users) => {
       !users
@@ -56,10 +56,10 @@ module.exports = {
     });
   },
 
-  // Add an assignment to a users
+  
   addFriend(req, res) {
-    console.log("You are adding an assignment");
-    console.log(req.body);
+    console.log("You are adding an friend");
+    console.log(req.params);
     Users.findOneAndUpdate(
       { _id: req.params.usersId },
       { $addToSet: { friends: req.params.friendId } },
@@ -72,12 +72,12 @@ module.exports = {
       )
       .catch((err) => res.status(500).json(err));
   },
-  // Remove assignment from a users
+  // Remove friend from a users
   removeFriend(req, res) {
     Users
       .findOneAndUpdate(
         { _id: req.params.usersId },
-        { $pull: { assignment: req.params.friendId } },
+        { $pull: { friends: req.params.friendId } },
         { runValidators: true, new: true }
       )
       .then((users) =>
