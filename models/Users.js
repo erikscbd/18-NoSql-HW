@@ -15,15 +15,15 @@ const usersSchema = new Schema(
       unique: true,
 
     },
-    thoughts: {
+    thoughts: [{
       type: Schema.Types.ObjectId,
       ref:'thought',
-    },
-    friends: {
+    }],
+    friends: [{
       type: Schema.Types.ObjectId,
       // Sets a default value of 12 weeks from now
       ref: 'users'
-    },
+    }],
    
   },
   {
